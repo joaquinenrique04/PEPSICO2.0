@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Livvic:wght@400;700&display=swap');
+
+/* Estilos generales del cuerpo */
+body {
+    background-color: rgb(144, 178, 233);
+    font-family: "Livvic", sans-serif;
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    background-image: url(Fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat; /* No repetir la imagen de fondo */
+    background-position: center; /* Centra la imagen de fondo */
+}
+
+/* Reiniciar márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para títulos y párrafos */
+h1 {
+    margin: 0.3em;
+    font-size: 3em;
+    text-align: center;
+}
+
+h2 {
+    margin: 0.5em;
+}
+
+h1, h2, p {
+    color: rgb(35, 45, 123);
+}
+
+h3 {
+    margin-bottom: 0.5em; /* Ajustar el espacio entre h2 y h3 */
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: center;
+    color: rgb(144, 178, 233);
+}
+
+p {
+    line-height: 2; /* Aumenta el espacio entre las líneas */
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: justify;
+    font-size: 16px;
+}
+
+/* Estilos para el panel lateral */
+.nav-lat {
+    position: fixed;
+    left: -300px; /* Moverlo fuera de la vista inicialmente */
+    top: 0;
+    width: 300px;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+.nav-lat.open {
+    left: 0; /* Muestra el panel al hacer clic en el botón */
+}
+.nav-lat.open {
+    transform: translateX(0);
+}
+.list {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(225, 225, 225);
+}
+.list_item {
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem; /* Ajusta el valor según el espacio deseado */
+}
+.list_item--click {
+    cursor: pointer;
+}
+.list_button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    gap: 1em; /* Añade espacio entre el icono y el texto */
+    margin-left: 30px;
+}
+
+.nav-icon {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+    color: rgb(35, 45, 123);
+}
+
+/* Estilos para la barra de navegación */
+#nav-bar {
+    background: linear-gradient(to right, #a6a6a6, #ffffff);
+    padding: 10px; /* Espacio interno de la barra de navegación */
+    display: flex; /* Usa un modelo de caja flexible */
+    justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+    align-items: center;
+    z-index: 1000;
+    
+    width: 100%;
+}
+
+#mision-vision {
+    padding-top: 150px; /* Ajusta este valor según el alto de tu nav */
+}
+
+#nuestra-historia {
+    padding-top: 100px; /* Ajusta este valor según el alto de tu nav */
+    padding-bottom: 100px;
+}
+
+.menu button, .search-container button, #cart, #login, #fav {
+    border: none;
+    cursor: pointer;
+}
+
+.menu button, #cart, #login, #fav {
+    background: none;
+}
+
+.menu button svg, #cart svg, #login svg, #fav svg {
+    width: 48px; /* Ajusta el tamaño del icono */
+    height: 48px; 
+    color: rgb(35, 45, 123);
+}
+
+.search-container {
+    display: flex;
+    background: white;
+    border-radius: 30px; /* Borde redondeado */
+    flex-direction: row-reverse; /* Dirección de los elementos invertida */
+}
+
+.search-container input {
+    width: 400px; 
+    height: 40px;
+    border: none;
+    background: white;
+    border-radius: 30px;
+    color: gray;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 30px; /* Espacio interno a la izquierda */
+    font-family: "Livvic", sans-serif;
+}
+
+.search-container button {
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    background: none;
+    outline: none;
+    position: absolute;
+    padding: 0 45px; /* Espacio interno */
+}
+
+.contador {
+    background-color: rgb(74, 99, 159);
+    position: absolute;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-weight: 700;
+    color: aliceblue;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    border-radius: 0.125rem;
+    right: 0px;
+    z-index: 10;
+    top: -0.25rem;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+ul li {
+    margin-right: 10px;
+    display: inline-block; /* Muestra los elementos como bloques en línea */
+    padding: 0 28px;
+    margin-top: 10px; /* Margen superior */
+}
+
+ul li a {
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+    color: rgb(35, 45, 123);
+}
+
+.icon img {
+    height: 40px;
+    width: auto;
+}
+
+.icon, .menu {
+    margin: 0 30px; /* Agrega espacio horizontal alrededor de los elementos */
+}
+
+/* Estilos para la sección "about" */
+.about {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Margen horizontal automático */
+    padding: 20px;
+}
+
+.about img {
+    width: 40%;
+    margin-right: 175px;
+    margin-top: 150px;
+}
+
+.about_text {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    color: rgb(35, 45, 123);
+    margin-top: 100px;
+}
+
+.about_text h1 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.about_text p {
+    background-color: white;
+    padding: 50px;
+    border-radius: 40px;
+    font-size: 16px;
+    line-height: 2; /* Altura de línea */
+    text-align: justify;
+}
+
+/* Estilos para la sección "Misión" y "Visión" */
+.mision-vision {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    max-width: 1200px;
+    margin: 0 auto; /* Centra horizontalmente */
+    padding: 20px;
+}
+
+.mission, .vision {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    margin-right: 60px; /* Agrega margen entre las secciones */
+}
+
+.mission_text, .vision_text {
+    background-color: white;
+    padding: 40px;
+    border-radius: 40px;
+}
+
+.mission h1, .vision h1 {
+    font-size: 30px;
+}
+
+/* Estilos para la línea de tiempo */
+.title {
+    text-align: center;
+    margin-bottom: 2em; /* Reducir el espacio entre el título y la línea de tiempo */
+}
+
+.timeline {
+    margin: 3em auto; /* Ajustar el margen superior para reducir el espacio */
+    max-width: 34.15em;
+}
+.checkpoint {
+    max-width: 34em;
+    position: relative;
+}
+.checkpoint div {
+    border: none;
+    background: white;
+    border-radius: 2em;
+    padding: 2em;
+    text-align: justify;
+}
+.checkpoint:nth-child(odd) {
+    border-left: 3px solid #fff;
+    padding-left: 3em;
+    transform: translateX(16.85em);
+}
+.checkpoint:nth-child(even) {
+    border-right: 3px solid #fff;
+    padding-right: 3em;
+    transform: translateX(-17em);
+}
+.checkpoint:nth-child(odd)::before,
+.checkpoint:nth-child(even)::before {
+    content: '';
+    background: #fff;
+    width: 3em;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.checkpoint:nth-child(odd)::before {
+    left: -3em;
+}
+.checkpoint:nth-child(even::before) {
+    right: -3em;
+}
+.checkpoint span {
+    color: #fff;
+    font-weight: 700;
+}
+.checkpoint:nth-child(odd) span {
+    position: absolute;
+    left: -16.85em;
+}
+.checkpoint:nth-child(even) span {
+    position: absolute;
+    right: -16.85em;
+}
+
+/* Estilos para la sección "Nuestra Empresa" */
+.section-container {
+    margin: 0 auto;
+    padding: 50px 20px;
+    display: flex;
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: space-between;
+    max-width: 1200px;
+}
+
+.section-content {
+    max-width: 600px;
+}
+
+.section-content h1 {
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.section-content p {
+    background-color: white;
+    padding: 40px;
+    border-radius: 40px;
+    font-size: 16px;
+    line-height: 2; /* Altura de línea */
+    text-align: justify;
+}
+
+.section-image img {
+    width: 500px;
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Otros estilos del sitio */
+
+/* Estilos para el pie de página */
+.pie-pagina {
+    background-color: rgb(74, 99, 159);
+    color: aliceblue;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.pie-pagina a {
+    color: aliceblue;
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+}
+
+.pie-pagina small {
+    display: block;
+    margin-top: 10px;
+}
+
+.red-social a {
+    margin: 0 10px; /* Espacio entre los iconos de las redes sociales */
+}
+
+.red-social img {
+    width: 30px; /* Ajusta el tamaño de los iconos */
+    height: 30px;
+}
+
+.logo-footer {
+    height: 40px; /* Ajusta el tamaño del logo */
+    width: auto;
+}
+
+.box {
+    margin: 20px;
+}
+
+.box h2 {
+    margin-bottom: 10px;
+}
+
+.links-section {
+    text-align: left;
+}
+
+.footer {
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+}
+
+/* Estilos para el contenedor principal */
+.productos-container {
+    width: 100%;
+    transition: width 0.3s ease; /* Transición suave para el ancho */
+    margin-top: 20px; /* Ajusta este valor según lo necesites */
+    padding-top: 20px; /* Otra opción, puedes ajustar o usar en combinación con margin-top */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.productos-desplazado {
+    width: calc(95% - 320px); /* Ajusta este valor según el ancho del carrito */
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los productos se ajusten a múltiples líneas */
+    justify-content: space-between; /* Añade espacio entre las líneas de productos */
+    gap: 20px;
+}
+
+/* Estilos para los productos individuales */
+.producto {
+    flex: 1 1 calc(33.33% - 20px); /* Ajusta el ancho y el espacio entre productos */
+    max-width: 300px; /* Ancho máximo */
+    background-color: white; /* Fondo blanco */
+    padding: 10px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    text-align: center; /* Centra el contenido del producto */
+    transition: transform 0.2s; /* Transición suave para el hover */
+}
+
+/* Efecto hover para los productos */
+.producto:hover {
+    transform: translateY(-5px); /* Eleva el producto */
+}
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.producto-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.producto-price {
+    font-size: 16px;
+    color: rgb(35, 45, 123);
+    margin-bottom: 10px;
+}
+
+.producto-button {
+    background-color: rgb(74, 99, 159);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.producto-button:hover {
+    background-color: rgb(35, 45, 123);
+}
+
+/* Estilos para el carrito */
+.carrito-container {
+    display: none;
+    position: fixed;
+    right: 20px;
+    top: 0;
+    width: 300px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 16px;
+    z-index: 1000;
+    gap: 16px;
+    margin-top: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.carrito-mostrar {
+    display: block;
+}
+
+.carrito-item {
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Añade espacio entre los elementos */
+}
+
+.carrito-item img {
+    margin-right: 10px;
+}
+
+.carrito-item .producto-detalles {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.carrito-item .producto-precio {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.carrito-item .producto-precio .boton-cantidad {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+}
+
+.carrito-total {
+    margin-top: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carrito-pagar {
+    display: block;
+    text-align: center;
+    background-color: #2828a7;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.carrito-pagar:hover {
+    background-color: #218838;
+}
+
+.carrito-item .boton-eliminar {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.carrito-item .boton-eliminar:hover {
+    background-color: #cc0000;
+}
